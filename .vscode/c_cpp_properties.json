@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "M5Stack",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/Users/shinomiya/AppData/Local/Arduino15/packages/esp32/tools/**",
+                "C:/Users/shinomiya/AppData/Local/Arduino15/packages/esp32/hardware/esp32/**",
+                "C:/Users/shinomiya/Documents/Arduino/libraries/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.18362.0",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
