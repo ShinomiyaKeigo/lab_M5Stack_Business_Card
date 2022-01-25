@@ -21,6 +21,8 @@ void init() {
     int delay_time = 3000;
     delay(delay_time);
 
+    Lcd.drawPngFile(SD, "/logo.png");
+
     bool is_pushed = false;
     while (!is_pushed) {
         M5.update();
@@ -96,9 +98,9 @@ void task3() {
     Lcd.setCursor(0, 0);
 
 #if SD_CARD_OK
-    Lcd.drawJpg(SD, "/face_photo.jpg");
+    Lcd.drawPngFile(SD, "/face_photo.png");
 #else
-    Lcd.printf("/face_photo.jpg\n");
+    Lcd.printf("/face_photo.png\n");
 #endif
 
     printNextPage();
@@ -140,9 +142,9 @@ void task5() {
     Lcd.setCursor(0, 0);
 
 #if SD_CARD_OK
-    Lcd.drawJpg(SD, "/DR.jpg");
+    Lcd.drawPngFile(SD, "/DR.png");
 #else
-    Lcd.printf("/DR.jpg\n");
+    Lcd.printf("/DR.png\n");
 #endif
     printNextPage();
     bool is_pushed = false;
@@ -153,16 +155,20 @@ void task5() {
 }
 
 void task6() {
+    int delay_time = 1000;
     Lcd.clear(BLACK);
     Lcd.setCursor(0, 0);
-    Lcd.setTextColor(PURPLE);
+    Lcd.setTextColor(WHITE);
     Lcd.setTextSize(config::std_txt_size);
 
-    Lcd.printf(
-        "I controlled the robot\n"
-        "in NHK Robocon 2021.\n"
-        "the robot is called \n"
-        "\"Mobius\"\n");
+    delay(delay_time);
+    Lcd.printf("I controlled the robot\n");
+    delay(delay_time);
+    Lcd.printf("in NHK Robocon 2021.\n");
+    delay(delay_time);
+    Lcd.printf("the robot is called\n");
+    delay(delay_time);
+    Lcd.printf("\"Mobius\"\n");
 
     printNextPage();
     bool is_pushed = false;
@@ -211,25 +217,26 @@ void setup() {
 void loop() {
 // M5.update();
 #if SD_CARD_OK
-    Lcd.drawJpg(SD, "/parrot1.jpg");
+    Lcd.clear(BLACK);
+    Lcd.drawPngFile(SD, "/parrot1.png");
     delay(config::flame_per_ms);
-    Lcd.drawJpg(SD, "/parrot2.jpg");
+    Lcd.drawPngFile(SD, "/parrot2.png");
     delay(config::flame_per_ms);
-    Lcd.drawJpg(SD, "/parrot3.jpg");
+    Lcd.drawPngFile(SD, "/parrot3.png");
     delay(config::flame_per_ms);
-    Lcd.drawJpg(SD, "/parrot4.jpg");
+    Lcd.drawPngFile(SD, "/parrot4.png");
     delay(config::flame_per_ms);
-    Lcd.drawJpg(SD, "/parrot5.jpg");
+    Lcd.drawPngFile(SD, "/parrot5.png");
     delay(config::flame_per_ms);
-    Lcd.drawJpg(SD, "/parrot6.jpg");
+    Lcd.drawPngFile(SD, "/parrot6.png");
     delay(config::flame_per_ms);
-    Lcd.drawJpg(SD, "/parrot7.jpg");
+    Lcd.drawPngFile(SD, "/parrot7.png");
     delay(config::flame_per_ms);
-    Lcd.drawJpg(SD, "/parrot8.jpg");
+    Lcd.drawPngFile(SD, "/parrot8.png");
     delay(config::flame_per_ms);
-    Lcd.drawJpg(SD, "/parrot9.jpg");
+    Lcd.drawPngFile(SD, "/parrot9.png");
     delay(config::flame_per_ms);
-    Lcd.drawJpg(SD, "/parrot10.jpg");
+    Lcd.drawPngFile(SD, "/parrot10.png");
     delay(config::flame_per_ms);
 #else
     Lcd.clear(BLACK);
@@ -237,25 +244,25 @@ void loop() {
     Lcd.setTextSize(config::std_txt_size);
     Lcd.setTextColor(GREEN);
 
-    Lcd.println("/parrot1.jpg");
+    Lcd.println("/parrot1.png");
     delay(config::flame_per_ms);
-    Lcd.println("/parrot2.jpg");
+    Lcd.println("/parrot2.png");
     delay(config::flame_per_ms);
-    Lcd.println("/parrot3.jpg");
+    Lcd.println("/parrot3.png");
     delay(config::flame_per_ms);
-    Lcd.println("/parrot4.jpg");
+    Lcd.println("/parrot4.png");
     delay(config::flame_per_ms);
-    Lcd.println("/parrot5.jpg");
+    Lcd.println("/parrot5.png");
     delay(config::flame_per_ms);
-    Lcd.println("/parrot6.jpg");
+    Lcd.println("/parrot6.png");
     delay(config::flame_per_ms);
-    Lcd.println("/parrot7.jpg");
+    Lcd.println("/parrot7.png");
     delay(config::flame_per_ms);
-    Lcd.println("/parrot8.jpg");
+    Lcd.println("/parrot8.png");
     delay(config::flame_per_ms);
-    Lcd.println("/parrot9.jpg");
+    Lcd.println("/parrot9.png");
     delay(config::flame_per_ms);
-    Lcd.println("/parrot10.jpg");
+    Lcd.println("/parrot10.png");
     delay(config::flame_per_ms);
 #endif
     // delay(config::loop_period);
