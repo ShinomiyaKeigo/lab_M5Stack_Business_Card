@@ -4,10 +4,6 @@
 
 #define SD_CARD_OK false
 
-int btn_count = 0;
-int task_count = config::init_task;
-bool task_finished = true;
-
 void printNextPage() {
     Lcd.setCursor(config::next_cursor_x, config::next_cursor_y);
     Lcd.setTextSize(config::std_txt_size);

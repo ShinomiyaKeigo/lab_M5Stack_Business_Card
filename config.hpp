@@ -19,26 +19,4 @@ static constexpr int end_cursor_x = 0;
 static constexpr int end_cursor_y = 80;
 static constexpr int fps = 30;
 static constexpr int flame_per_ms = 1000 / fps;
-
 }  // namespace config
-
-class Change {
-public:
-    bool operator()(int value) {
-        if (is_first) {
-            is_first = false;
-            old = value;
-            return false;
-        } else if (value == old) {
-            old = value;
-            return false;
-        } else {
-            old = value;
-            return true;
-        }
-    }
-
-private:
-    int old;
-    bool is_first = true;
-};
